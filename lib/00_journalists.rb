@@ -69,6 +69,12 @@ puts undescore
 
 # ordre alphabétique de la liste
 
+def ordre 
+    puts "Voici la liste par ordre alphabétique #{journalists.sort}" 
+end
+
+puts ordre
+
 # liste des handles commençant pas une majuscule
 
 def startmaj 
@@ -86,4 +92,12 @@ end
 puts court
 
 # position de l'handle @epenser dans l'array
+
+def pos 
+puts "@epenser est à la #{journalists.find_index("@epenser")} position."
+end
+
+puts pos
+
+
 
