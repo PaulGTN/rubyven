@@ -94,7 +94,7 @@ puts court
 # position de l'handle @epenser dans l'array
 
 def pos 
-puts "@epenser est à la #{journalists.find_index("@epenser")} position."
+puts "@epenser est à la #{journalists.find_index("@epenser")}e position."
 end
 
 puts pos
