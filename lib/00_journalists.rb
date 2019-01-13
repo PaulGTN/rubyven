@@ -86,7 +86,7 @@ puts startmaj
 # liste des handles les plus courts
 
 def court 
-    puts "Voici la liste des handles les plus court : #{journalists.min_by(50) {|x| x.length}}"
+    puts "Voici la liste des 50 handles les plus court : #{journalists.min_by(50) {|x| x.length}}"
 end
 
 puts court
