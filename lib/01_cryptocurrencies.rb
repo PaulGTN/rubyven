@@ -28,9 +28,8 @@ end
  # valeur la plus haute
 
  def maxvalue
-   maxvalue = deval.max_by do |element|
-      element.values_at
-   end
+   maxvalue = deval.max_by {|x, value| value.slice(1..value.length).to_f}
+   # deval.max_by{|k,v| v}
       
    puts "La crypto-monnaie ayant la valeur la plus élevé est #{maxvalue} "
 
@@ -41,10 +40,9 @@ end
     # valeur la plus basse
 
    def minvalue
-      
-   minvalue = deval.max_by do |element|
-      element.max
-   end 
+      minvalue = deval.min_by {|x, value| value.slice(1..value.length).to_f}
+   # minvalue = deval.min_by{|k,v| v}
+   
 
    puts "La crypto-monnaie ayant la valeur la plus basse est #{minvalue} "
   
@@ -60,9 +58,25 @@ end
 
   puts coin 
 
-   # devise dont le cours est inférieur à 6000
+   # devises dont le cours est inférieur à 6000
 
+   def cheap 
+      cheap = deval.count{|x,y| y.slice(1..y.length).to_i < 6000}
+   end
+
+   puts "Il y a #{cheap} crypto-monnaies possédant une valeur inférieure à 6000$"
+   
    # devise la plus chère ayant une valeur < 6000
+
+   def high 
+   high = (deval.reject{|x,y| (y.slice(1..y.length).to_i >= 6000)}).max_by{|x, y| y.slice(1..y.length).to_f}
+
+   end
+
+   puts "La crypto-monnaie ayant la valeur la plus élevée en dessous 6000$ est #{high}"
+
+
+
 
     
     
